@@ -6,11 +6,11 @@ class GumballMachine
 	private $gumballs;
 	
 	private $bdd;
-	/* Paramètre de connexion à la base de données*/
+	/* Paramï¿½tre de connexion ï¿½ la base de donnï¿½es*/
 	private $servername="localhost";
-	private $db_name="mydb1"; //a remplir
-	private $db_user="myuser1"; //a remplir
-	private $db_pass="mypassword1"; //a remplir
+	private $db_name="mydb4"; //a remplir
+	private $db_user="myuser4"; //a remplir
+	private $db_pass="mypassword4"; //a remplir
 	
 	
 	function __construct()
@@ -91,6 +91,21 @@ class GumballMachine
 	    $user = $stmt->fetch();
 	    return $user['maximum'];
 	}
+
+	public function GetIdC($intitule)
+    	{
+    	    $stmt = $this->bdd->prepare("select id from cours where intitule=? and prenom=?");
+    	    $stmt->execute([$nom,$prenom]);
+    	    $user = $stmt->fetch();
+    	    return $user['id'];
+    	}
+    	public function GetLastIDC()
+    	{
+    	    $stmt = $this->bdd->prepare("select max(id) as maximum from cours");
+    	    $stmt->execute();
+    	    $user = $stmt->fetch();
+    	    return $user['maximum'];
+    	}
 	
 	public function InsertC($intitule, $duree , $id_prof)
 	{
