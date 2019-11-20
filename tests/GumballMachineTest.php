@@ -64,6 +64,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     public function testAffichageProfAPI()
     {
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Insertion of Professors"));
         /*� completer*/
     }
      
@@ -88,7 +89,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testAffichageCoursAPI()
     {
-        /*� completer*/
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("After Insertion of Course"));
     }
 
    
