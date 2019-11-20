@@ -95,7 +95,7 @@ class GumballMachine
 	public function GetIdC($intitule)
     	{
     	    $stmt = $this->bdd->prepare("select id from cours where intitule=? and prenom=?");
-    	    $stmt->execute([$nom,$prenom]);
+    	    $stmt->execute([$intitule]);
     	    $user = $stmt->fetch();
     	    return $user['id'];
     	}
