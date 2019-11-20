@@ -138,12 +138,12 @@ class GumballMachine
         	}
 	}
 
-	public function UpdateC($intitule, $duree, $id_prof)
+	public function UpdateC($intitule, $duree)
     	{
     	     try
             	{
             	    $this->bdd->prepare();
-            	    $sql = "UPDATE Cours SET ('$duree', '$id_prof') WHERE intitule = '$intitule'";
+            	    $sql = "UPDATE Cours SET duree = '$duree' WHERE intitule = '$intitule'";
             	    $this->bdd->exec($sql);
             	    return true;
             	}
