@@ -107,7 +107,7 @@ class GumballMachine
     	    return $user['maximum'];
     	}
 	
-	public function InsertC($intitule, $duree , $id_prof)
+	public function InsertC($bdd, $intitule, $duree , $id_prof)
 	{
 	    try
 	    {
