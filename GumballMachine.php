@@ -123,10 +123,35 @@ class GumballMachine
 	    
 	}
 	
-	public function UpdateP()
+	public function UpdateP($nom, $prenom, $date_naissance, $lieu_naissance, $idProf)
 	{
-	    
+	     try
+        	{
+        	    $this->bdd->prepare();
+        	    $sql = "UPDATE Prof SET('$nom', '$prenom', '$date_naissance', '$lieu_naissance') WHERE id = '$idProf'";
+        	    $this->bdd->exec($sql);
+        	    return true;
+        	}
+        catch(PDOException $e)
+        	{
+        	  echo $sql . "<br>" . $e->getMessage();
+        	}
 	}
+
+	public function UpdateC($intitule, $duree, $id_prof)
+    	{
+    	     try
+            	{
+            	    $this->bdd->prepare();
+            	    $sql = "UPDATE Cours SET ('$duree', '$id_prof') WHERE intitule = '$intitule'";
+            	    $this->bdd->exec($sql);
+            	    return true;
+            	}
+            catch(PDOException $e)
+            	{
+            	  echo $sql . "<br>" . $e->getMessage();
+            	}
+    	}
 	
 	public function DeleteP()
 	{

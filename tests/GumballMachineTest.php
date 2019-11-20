@@ -92,5 +92,13 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("After Insertion of Course"));
     }
 
-   
+
+
+    public function testUpdateC()
+   {
+
+
+
+
+   }
 }
