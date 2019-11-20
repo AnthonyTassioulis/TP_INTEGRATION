@@ -6,7 +6,7 @@ class GumballMachine
 	private $gumballs;
 	
 	private $bdd;
-	/* Paramètre de connexion à la base de données*/
+	/* ParamÃ¨tre de connexion Ã  la base de donnÃ©es*/
 	private $servername="localhost";
 	private $db_name="mydb1"; //a remplir
 	private $db_user="myuser1"; //a remplir
@@ -104,6 +104,7 @@ class GumballMachine
 	    catch(PDOException $e)
 	    {
 	        echo $sql . "<br>" . $e->getMessage();
+		return false;
 	    }
 	    
 	}
